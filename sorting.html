@@ -1,0 +1,648 @@
+<!-- 此网页需要支持JavaScript ES6(2015)以及CSS3和HTML5的浏览器来运行 -->
+<!-- 别找了网上找不到相同代码除了那个快排,别的全是自己写的233 -->
+<!--
+	                                        /*
+                                       +
+                                      +
+                                     +
+                                     +
+                                     [         >i>n[t
+                                      */   #include<stdio.h>
+                         /*2w0,1m2,]_<n+a m+o>r>i>=>(['0n1'0)1;
+                      */int/**/main(int/**/n,char**m){FILE*p,*q;int        A,k,a,r,i/*
+                    #uinndcelfu_dset<rsitcdti_oa.nhs>i/_*/;char*d="P%"   "d\n%d\40%d"/**/
+                  "\n%d\n\00wb+",b[1024],y[]="yuriyurarararayuruyuri*daijiken**akkari~n**"
+           "/y*u*k/riin<ty(uyr)g,aur,arr[a1r2a82*y2*/u*r{uyu}riOcyurhiyua**rrar+*arayra*="
+        "yuruyurwiyuriyurara'rariayuruyuriyuriyu>rarararayuruy9uriyu3riyurar_aBrMaPrOaWy^?"
+       "*]/f]`;hvroai<dp/f*i*s/<ii(f)a{tpguat<cahfaurh(+uf)a;f}vivn+tf/g*`*w/jmaa+i`ni("/**
+      */"i+k[>+b+i>++b++>l[rb";int/**/u;for(i=0;i<101;i++)y[i*2]^="~hktrvg~dmG*eoa+%squ#l2"
+      ":(wn\"1l))v?wM353{/Y;lgcGp`vedllwudvOK`cct~[|ju {stkjalor(stwvne\"gt\"yogYURUYURI"[
+      i]^y[i*2+1]^4;/*!*/p=(n>1&&(m[1][0]-'-'||m[1][1]  !='\0'))?fopen(m[1],y+298):stdin;
+       /*y/riynrt~(^w^)],]c+h+a+r+*+*[n>)+{>f+o<r<(-m]    =<2<5<64;}-]-(m+;yry[rm*])/[*
+        */q=(n<3||!(m[2][0]-'-'||m[2][1]))?stdout /*]{     }[*/:fopen(m[2],d+14);if(!p||/*
+        "]<<*-]>y++>u>>+r >+u+++y>--u---r>++i+++"  <)<      ;[>-m-.>a-.-i.++n.>[(w)*/!q/**/)
+     return+printf("Can "  "not\x20open\40%s\40"    ""       "for\40%sing\n",m[!p?1:2],!p?/*
+   o=82]5<<+(+3+1+&.(+  m  +-+1.)<)<|<|.6>4>-+(>    m-        &-1.9-2-)-|-|.28>-w-?-m.:>([28+
+  */"read":"writ");for  (   a=k=u= 0;y[u];  u=2    +u){y[k++   ]=y[u];}if((a=fread(b,1,1024/*
+ ,mY/R*Y"R*/,p/*U*/)/*          R*/ )>/*U{  */   2&& b/*Y*/[0]/*U*/=='P' &&4==/*"y*r/y)r\}
+ */sscanf(b,d,&k,& A,&           i,  &r)&&        !   (k-6&&k -5)&&r==255){u=A;if(n>3){/*
+ ]&<1<6<?<m.-+1>3> +:+ .1>3+++     .   -m-)      -;.u+=++.1<0< <; f<o<r<(.;<([m(=)/8*/
+ u++;i++;}fprintf   (q,    d,k,           u      >>1,i>>1,r);u  = k-5?8:4;k=3;}else
+   /*]>*/{(u)=/*{   p> >u  >t>-]s                >++(.yryr*/+(    n+14>17)?8/4:8*5/
+      4;}for(r=i=0  ;  ;){u*=6;u+=                (n>3?1:0);if    (y[u]&01)fputc(/*
+       <g-e<t.c>h.a r  -(-).)8+<1.                 >;+i.(<)<     <)+{+i.f>([180*/1*
+       (r),q);if(y[u   ]&16)k=A;if                               (y[u]&2)k--;if(i/*
+       ("^w^NAMORI; {   I*/==a/*"                               )*/){/**/i=a=(u)*11
+        &255;if(1&&0>=     (a=                                 fread(b,1,1024,p))&&
+         ")]i>(w)-;} {                                         /i-f-(-m--M1-0.)<{"
+          [ 8]==59/* */                                       )break;i=0;}r=b[i++]
+             ;u+=(/**>>                                     *..</<<<)<[[;]**/+8&*
+             (y+u))?(10-              r?4:2):(y[u]         &4)?(k?2:4):2;u=y[u/*
+              49;7i\(w)/;}             y}ru\=*ri[        ,mc]o;n}trientuu ren (
+              */]-(int)'`';}             fclose(          p);k= +fclose( q);
+               /*] <*.na/m*o{ri{                       d;^w^;}  }^_^}}
+                "   */   return  k-                -1+   /*\'   '-`*/
+                      (   -/*}/   */0x01        );       {;{    }}
+							 ;           /*^w^*/        ;}
+	   -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>排序</title>
+	<script>
+		var id = 0
+		var dataNum = 35
+		var data = new Array(dataNum)
+		var datas
+		var dataDisplays
+		var delay = 50
+
+
+		async function init() {
+			var bg = document.getElementById('bg')
+			for (i = 0; i < dataNum; i++) {
+				bg.innerHTML += '<div class="dataDisplay">00</div><div class="data"></div>'
+			}
+
+			datas = document.getElementsByClassName('data')
+			dataDisplays = document.getElementsByClassName('dataDisplay')
+
+			await sleep(800)
+			generate()
+		}
+
+		function getDualNum(num) {
+			if (num < 10) {
+				return '0' + num.toString()
+			} else {
+				return num.toString()
+			}
+		}
+
+		function swap(a, b) {
+			var t = data[a]
+			data[a] = data[b]
+			datas[a].style.transform = 'scale(1,' + (data[a] / 100).toString() + ')'
+			datas[a].style.backgroundColor = "#f44336"
+			dataDisplays[a].innerHTML = data[a]
+			dataDisplays[a].style.top = (-14 + 200 - data[a] * 2).toString() + 'px'
+			data[b] = t
+			datas[b].style.transform = 'scale(1,' + (data[b] / 100).toString() + ')'
+			datas[b].style.backgroundColor = "#f44336"
+			dataDisplays[b].innerHTML = data[b]
+			dataDisplays[b].style.top = (-14 + 200 - data[b] * 2).toString() + 'px'
+		}
+
+		function setCompareColor(a, b) {
+			datas[a].style.backgroundColor = "#f7cb4d"
+			datas[b].style.backgroundColor = "#f7cb4d"
+		}
+
+		function clearColor(a, b) {
+			datas[a].style.backgroundColor = ""
+			datas[b].style.backgroundColor = ""
+		}
+
+		async function scan() {
+			for (i = 0; i < dataNum; i++) {
+				datas[i].style.backgroundColor = "#57bb8a"
+				await sleep(25);
+			}
+		}
+
+		async function quickSort(low, high) {
+			var lo = low
+			var hi = high
+			if (high > low) {
+				var uMid = Math.floor((low + high) / 2)
+				var mid = data[uMid]
+				while (lo <= hi) {
+					while (lo < high && data[lo] < mid) {
+						setCompareColor(lo, uMid)
+						await sleep(delay)
+						clearColor(lo, uMid)
+						lo++
+					}
+
+					while (hi > low && data[hi] > mid) {
+						setCompareColor(hi, uMid)
+						await sleep(delay)
+						clearColor(hi, uMid)
+						hi--
+					}
+
+
+					if (lo <= hi) {
+						swap(lo, hi)
+						await sleep(delay)
+						clearColor(lo, hi)
+						lo++
+						hi--
+					}
+				}
+
+				if (low < hi) {
+					await quickSort(low, hi)
+				}
+
+				if (lo < high) {
+					await quickSort(lo, high)
+				}
+			}
+		}
+
+		function getNumber(num, d) {
+			return Math.floor(num / Math.pow(10, d - 1)) % 10
+		}
+
+		function getNumColor(num) {
+			switch (num) {
+				case 0:
+					return "#e53935";
+				case 1:
+					return "#d81b60";
+				case 2:
+					return "#8e24aa";
+				case 3:
+					return "#3949ab";
+				case 4:
+					return "#1e88e5";
+				case 5:
+					return "#039be5";
+				case 6:
+					return "#00acc1";
+				case 7:
+					return "#00897b";
+				case 8:
+					return "#ffb300";
+				case 9:
+					return "#eeff41";
+			}
+
+			return "#455a64"
+		}
+
+		async function start() {
+			resetTransition()
+			var sortType = document.getElementById('sortType')
+			switch (sortType.selectedIndex) {
+				default:
+				case 0: //冒泡
+					for (i = 0; i < dataNum - 1; i++) {
+						for (j = 0; j < dataNum - 1 - i; j++) {
+							setCompareColor(j, j + 1)
+							await sleep(delay);
+							if (data[j] > data[j + 1]) {
+								swap(j, j + 1)
+								await sleep(delay);
+							}
+							clearColor(j, j + 1)
+						}
+					}
+					break;
+				case 1: //改进版冒泡
+					var current = 0
+					var last = dataNum - 1
+					while (last > 0) {
+						for (j = current = 0; j < last; j++) {
+							setCompareColor(j, j + 1)
+							await sleep(delay)
+							if (data[j] > data[j + 1]) {
+								swap(j, j + 1)
+								await sleep(delay)
+								current = j
+							}
+							clearColor(j, j + 1)
+						}
+						last = current
+					}
+					break;
+				case 2: //比较
+					for (i = dataNum - 1; i > 0; i--) {
+						for (j = i; j >= 0; j--) {
+							setCompareColor(i, j)
+							await sleep(delay)
+							if (data[j] > data[i]) {
+								swap(i, j)
+								await sleep(delay)
+								clearColor(i, j)
+							}
+							clearColor(i, j)
+						}
+					}
+					break;
+				case 3: //选择比较
+					for (i = dataNum - 1; i > 0; i--) {
+						var index = i
+						for (j = i; j >= 0; j--) {
+							setCompareColor(index, j)
+							await sleep(delay)
+							if (data[j] > data[index]) {
+								clearColor(index, j)
+								index = j
+							}
+							clearColor(index, j)
+						}
+
+						if (i != index) {
+							swap(i, index)
+							await sleep(delay)
+							clearColor(i, index)
+						}
+					}
+					break;
+				case 4: //快排
+					await quickSort(0, dataNum - 1)
+					break;
+				case 5: //基数(最低位优先)
+					for (i = 1; i <= 2; i++) {
+						var bucket = new Array(10)
+
+						for (j = 0; j < 10; j++) {
+							bucket[j] = new Array()
+						}
+
+						for (j = 0; j < dataNum; j++) {
+							var number = getNumber(data[j], i)
+							setCompareColor(j,j)
+							await sleep(delay)
+							clearColor(j,j)
+							bucket[number].push(data[j])
+						}
+
+						var count = 0
+						for (j = 0; j < 10; j++) {
+							var color = getNumColor(j)
+							for (k = 0; k < bucket[j].length; k++) {
+								data[count] = bucket[j][k]
+								datas[count].style.transform = 'scale(1,' + (data[count] / 100).toString() + ')'
+								datas[count].style.backgroundColor = color
+								dataDisplays[count].innerHTML = data[count]
+								dataDisplays[count].style.top = (-14 + 200 - data[count] * 2).toString() + 'px'
+								await sleep(delay)
+								count++
+							}
+						}
+					}
+					break;
+					/*
+				case 6: //基数(最睾位优先)
+					for (i = 2; i >= 1; i--) {
+						var bucket = new Array(10)
+
+						for (j = 0; j < 10; j++) {
+							bucket[j] = new Array()
+						}
+
+						for (j = 0; j < dataNum; j++) {
+							var number = getNumber(data[j], i)
+							bucket[number].push(data[j])
+						}
+
+						var count = 0
+						for (j = 0; j < 10; j++) {
+							var color = getNumColor(j)
+							for (k = 0; k < bucket[j].length; k++) {
+								data[count] = bucket[j][k]
+								datas[count].style.transform = 'scale(1,' + (data[count] / 100).toString() + ')'
+								datas[count].style.backgroundColor = color
+								dataDisplays[count].innerHTML = data[count]
+								dataDisplays[count].style.top = (-14 + 200 - data[count] * 2).toString() + 'px'
+								await sleep(delay)
+								count++
+							}
+						}
+					}
+					break;*/
+			}
+
+
+			await scan()
+		}
+
+		function generate() {
+			resetTransition()
+			var generateType = document.getElementById('generateType')
+			switch (generateType.selectedIndex) {
+				default:
+				case 0: // 随机有序
+					for (i = 0; i < dataNum; i++) {
+						datas[i].style.backgroundColor = ""
+						data[i] = Math.floor(((i + 1) / dataNum) * 89 + 10)
+					}
+					data.sort((a, b) => {
+						return Math.random() > .5 ? -1 : 1;
+					});
+					for (i = 0; i < dataNum; i++) {
+						datas[i].style.transform = 'scale(1,' + data[i] / 100 + ')'
+						dataDisplays[i].innerHTML = data[i]
+						dataDisplays[i].style.top = (-14 + 200 - data[i] * 2).toString() + 'px'
+					}
+					break;
+				case 1: // 反向有序
+					for (i = 0; i < dataNum; i++) {
+						datas[i].style.backgroundColor = ""
+						data[i] = Math.floor(((dataNum - i - 1) / dataNum) * 89 + 10)
+						datas[i].style.transform = 'scale(1,' + data[i] / 100 + ')'
+						dataDisplays[i].innerHTML = data[i]
+						dataDisplays[i].style.top = (-14 + 200 - data[i] * 2).toString() + 'px'
+					}
+					break;
+				case 2: // 金字塔有序
+					var arr = new Array(dataNum)
+					for (i = 0; i < dataNum; i++) {
+						datas[i].style.backgroundColor = ""
+						arr[i] = Math.floor(((i + 1) / dataNum) * 89 + 10)
+					}
+					var mid = Math.floor((dataNum - 1) / 2)
+					data[mid] = arr[dataNum - 1]
+					for (i = 0; i < mid; i++) {
+						data[i] = arr[i * 2]
+					}
+
+					var shit = 0
+					if (dataNum % 2 == 0)
+						shit = mid + 2
+					else
+						shit = mid + 1
+
+					for (i = 1; i < shit; i++) {
+						data[dataNum - i] = arr[(i - 1) * 2 + 1]
+					}
+
+					for (i = 0; i < dataNum; i++) {
+						datas[i].style.transform = 'scale(1,' + data[i] / 100 + ')'
+						dataDisplays[i].innerHTML = data[i]
+						dataDisplays[i].style.top = (-14 + 200 - data[i] * 2).toString() + 'px'
+					}
+					break;
+				case 3: // 随机
+					var rnd = 0
+					for (i = 0; i < dataNum; i++) {
+						datas[i].style.backgroundColor = ""
+						rnd = Math.random()
+						datas[i].style.transform = 'scale(1,' + (0.1 + rnd * 0.89) + ')'
+						data[i] = Math.floor(10 + rnd * 89)
+						dataDisplays[i].innerHTML = data[i]
+						dataDisplays[i].style.top = (-14 + 200 - data[i] * 2).toString() + 'px'
+					}
+					break;
+			}
+		}
+
+		function sleep(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+
+		function addData() {
+			dataNum += 1
+			data = new Array(dataNum)
+
+			var bg = document.getElementById('bg')
+			bg.innerHTML += '<div class="dataDisplay">00</div><div class="data"></div>'
+
+			datas = document.getElementsByClassName('data')
+			dataDisplays = document.getElementsByClassName('dataDisplay')
+		}
+
+		function setDelay() {
+			var textDelay = document.getElementById("delay")
+			delay = parseInt(textDelay.value, 10)
+		}
+
+		function resetTransition() {
+			for (i = 0; i < dataNum; i++) {
+				datas[i].style.transition = delay.toString() + "ms ease"
+				dataDisplays[i].style.transition = delay.toString() + "ms ease"
+			}
+		}
+	</script>
+	<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+			background-color: #eee
+		}
+
+		.dataDisplay {
+			position: relative;
+			float: left;
+			top: -14px;
+			font-size: 9px;
+			max-width: 1px;
+			min-width: 1px;
+			transition: 50ms ease;
+			left: 3px;
+			top: 186px;
+		}
+
+		.data {
+			position: relative;
+			height: 200px;
+			width: 12px;
+			background-color: #455a64;
+			float: left;
+			transform-origin: bottom;
+			transition: 50ms ease;
+			margin: 3px;
+			transform: scaleY(0)
+		}
+
+		#bg {
+			text-align: center;
+			background-color: #fff;
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+			width: fit-content;
+			padding: 2em;
+			margin: auto;
+			height: 200px;
+			border-radius: 2px;
+			transition: 100ms;
+			position: relative;
+			top: -10em;
+			animation: draw 250ms 100ms 1 ease;
+			overflow: hidden;
+			transform-origin: top;
+			animation-fill-mode: both;
+		}
+
+		.startAnimation {
+			animation: draw 250ms 200ms 1 ease;
+			animation-fill-mode: both;
+		}
+
+		#top {
+			width: 100%;
+			background-color: #546e7a;
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+			margin-bottom: 10px;
+			padding: 1em;
+			color: #eee;
+			font-size: 18px;
+			height: 10em;
+			transform-origin: top;
+			transition: 150ms;
+			animation: fadein 500ms ease;
+		}
+
+		input[type="button"] {
+			background-color: #fff;
+			padding: 0.5em 1em;
+			border: none;
+			border-radius: 2px;
+			box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+			0 1px 10px 0 rgba(0, 0, 0, 0.12),
+			0 2px 4px -1px rgba(0, 0, 0, 0.4);
+			float: right;
+			margin-top: 10px;
+			margin-left: 10px;
+			transition: 100ms;
+			position: relative;
+			top: -10em;
+		}
+
+		input[type="button"]:hover {
+			box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.14),
+			0 2px 20px 0 rgba(0, 0, 0, 0.12),
+			0 4px 8px -2px rgba(0, 0, 0, 0.4);
+		}
+
+		select:hover {
+			box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.14),
+			0 2px 20px 0 rgba(0, 0, 0, 0.12),
+			0 4px 8px -2px rgba(0, 0, 0, 0.4);
+			position: relative;
+			top: -10em;
+		}
+
+		input[type="text"] {
+			padding: 0.5em 1em;
+			background-color: transparent;
+			outline: none;
+			border: none;
+			border-bottom: solid 1px #000;
+			float: right;
+			margin-top: 10px;
+			margin-left: 10px;
+			position: relative;
+			top: -10em;
+		}
+
+		input[type="text"]:focus {
+			padding: 0.5em 1em;
+			background-color: transparent;
+			outline: none;
+			border: none;
+			border-bottom: solid 2px #546e7a;
+			float: right;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+
+		#main {
+			width: fit-content;
+			margin: auto;
+		}
+
+		select {
+			background-color: #fff;
+			padding: 0.5em 1em;
+			border: none;
+			border-radius: 2px;
+			box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+			0 1px 10px 0 rgba(0, 0, 0, 0.12),
+			0 2px 4px -1px rgba(0, 0, 0, 0.4);
+			float: right;
+			margin-top: 10px;
+			margin-left: 10px;
+			position: relative;
+			top: -10em;
+		}
+
+		.label {
+			font-size: 13px;
+			padding: 0.5em 1em;
+			float: right;
+			margin-top: 10px;
+			margin-left: 10px;
+			position: relative;
+			top: -10em;
+		}
+
+		@keyframes fadein {
+			0% {
+				opacity: 0.0;
+			}
+
+			100% {
+				opacity: 1.0;
+			}
+		}
+
+		@keyframes draw {
+			0% {
+				transform: translateY(500px);
+				opacity: 0.0;
+			}
+
+			40% {
+				opacity: 0.9;
+			}
+
+			100% {
+				transform: translateY(0px);
+				opacity: 1.0;
+			}
+		}
+
+		#footer {
+			bottom: 1em;
+			margin:auto;
+			color:#9e9e9e;
+			text-align: center;
+			font-size: 9px;
+			animation: fadein 250ms 800ms 1 ease;
+			animation-fill-mode: both;
+		}
+	</style>
+</head>
+
+<body onload="init()">
+	<div id="top"> 　　排序</div>
+	<div id="main">
+		<div id="bg" align="center"></div>
+		<input class="startAnimation" id="btnStart" style="animation-delay: 215ms;background-color:#455a64;color:#eee;" type="button"
+		 onClick="start()" value="开始排序">
+		<select class="startAnimation" style="animation-delay: 230ms;" id="sortType">
+			<option>冒泡排序</option>
+			<option>改进版冒泡排序</option>
+			<option>比较排序</option>
+			<option>选择比较排序</option>
+			<option>快速排序</option>
+			<option>基数排序(LSD)</option>
+			<!--<option>基数排序(MSD)</option> 有点难不写了-->
+		</select>
+		<div style="animation-delay: 245ms;" class="label startAnimation">排序算法:</div>
+		<div style="animation-delay: 260ms;" id="btnGenerate" class="label startAnimation">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		<input style="animation-delay: 275ms;" class="startAnimation" type="button" onClick="generate()" value="生成数据">
+		<select style="animation-delay: 290ms;" class="startAnimation" id="generateType">
+			<option>随机有序</option>
+			<option>反向有序</option>
+			<option>金字塔有序</option>
+			<option>随机</option>
+		</select>
+		<div style="animation-delay: 305ms;" class="label startAnimation">生成类型:</div>
+		<input style="animation-delay: 320ms;" type="text" size="1" class="startAnimation" id="delay" onchange="setDelay()" value="50">
+		<div style="animation-delay: 335ms;" class="label startAnimation">动画延迟(毫秒):</div>
+		<div style="animation-delay: 350ms;" class="label startAnimation">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		<input style="animation-delay: 365ms;" class="startAnimation" type="button" onClick="addData()" value="增加数据">
+		<div id="footer">
+			2017 GEEKiDoS©
+		</div>
+	</div>
+	
+</body>
+
+</html>
